@@ -81,9 +81,10 @@ Logika `DoorController.cs` di awali dengan deklarasikan
         void onDoorOpenStateChanged(string valude, string message);
     }
     
-    ```
-
-Sedangkan class `Door.cs` ini berfungsi untuk mendeklarasikan untuk class `DoorController.cs`.dengan source code seperti berikut
+```
+  
+   
+  Sedangkan class `Door.cs` ini berfungsi untuk mendeklarasikan untuk class `DoorController.cs`.dengan source code seperti berikut
 
 ```
  class Door
