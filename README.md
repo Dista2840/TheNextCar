@@ -8,6 +8,7 @@ Aplikasi ini adalah simulasi mobil pintar / mobil yg menggunakan teknologi moder
 ## How Does it Works?
 Diawali dengan method main window pada class `MainWindow.xaml.cs` kita mendeklarasikan dengan
 
+```
  public partial class MainWindow : Window , OnPowerChanged, OnDoorChanged, OnCarEngineStateChanged
     {
         private Car nextCar;
@@ -20,12 +21,13 @@ Diawali dengan method main window pada class `MainWindow.xaml.cs` kita mendeklar
 
             nextCar = new Car(doorController, accubattreyController , this);
         }
-
+``` 
 
 Logika Controller terdapat 2 class yaitu class `AccubatteryController.cs` dan `DoorController.cs`.kelas ini berfungsi untuk mengontrol pintu untuk membuka,menutup dan mengunci.
 
 Logika `DoorController.cs` di awali dengan deklarasikan
 
+```
  class DoorController
     {
         private Door door;
@@ -78,34 +80,46 @@ Logika `DoorController.cs` di awali dengan deklarasikan
         void onLockDoorStateChanged(string value, string message);
         void onDoorOpenStateChanged(string valude, string message);
     }
+    
+    ```
 
 Sedangkan class `Door.cs` ini berfungsi untuk mendeklarasikan untuk class `DoorController.cs`.dengan source code seperti berikut
-csharp
-private bool locked;
+
+```
+ class Door
+    {
+        private bool locked;
         private bool closed;
 
         public void close()
         {
             this.closed = true;
         }
+
         public void open()
         {
-            this.closed = false;
+            this.locked = true;
         }
+
         public void activateLock()
         {
             this.locked = true;
         }
+
         public void unlock()
         {
             this.locked = false;
         }
+
         public bool isLocked()
         {
             return this.locked;
         }
+
         public bool isClosed()
         {
             return this.closed;
         }
     }
+    
+    ```
